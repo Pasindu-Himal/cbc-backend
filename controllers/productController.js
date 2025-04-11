@@ -12,7 +12,6 @@ import { isAdmin } from "./userController.js";
 //       error : err
 //     })
 //   }
-// )
 
 export async function getProduct(req, res) {
   try {
