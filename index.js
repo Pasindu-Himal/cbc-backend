@@ -7,6 +7,7 @@ import jwt from "jsonwebtoken";
 
 let app = express();
 
+
 app.use(bodyParser.json());
 
 app.use((req, res, next) => {
