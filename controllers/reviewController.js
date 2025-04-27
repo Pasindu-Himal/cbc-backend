@@ -57,11 +57,20 @@ export async function createReview(req,res){
         })
     }
 
+}
 
 
-
-
-
-
-
+export async function getReviews(req,res){
+    try{
+        const itemId = req.params.productId;
+        const productReview = await Review.find({productId : itemId});
+        res.json({
+            reviews : productReview
+           })
+    }catch(err){
+        res.status(500).json({
+            message : "Failed to get reviews",
+            error : err
+        })
+    }
 }
