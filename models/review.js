@@ -28,10 +28,10 @@ const reviewSchema = mongoose.Schema({
         required : true
     },
     date : {
-        type : String,
-        required : true
+        type : Date,
+        default : Date.now
     }
 })
 
 const Review = mongoose.model("reviews", reviewSchema)
-export default Order;
+export default Review;
