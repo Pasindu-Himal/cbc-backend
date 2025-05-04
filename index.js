@@ -6,11 +6,13 @@ import userRouter from "./routes/userRoute.js";
 import jwt from "jsonwebtoken";
 import orderRouter from "./routes/orderRoute.js";
 import reviewRouter from "./routes/reviewRoute.js";
+import cors from "cors";
 
 let app = express();
 
-
+app.use(cors());
 app.use(bodyParser.json());
+
 
 app.use((req, res, next) => {
   const tokenString = req.header("Authorization");
