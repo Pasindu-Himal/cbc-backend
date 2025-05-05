@@ -23,7 +23,7 @@ app.use((req, res, next) => {
     const token = tokenString.replace("Bearer ", "");
     //console.log(token);
 
-    jwt.verify(token, "abc@123", (err, decoded) => {
+    jwt.verify(token, process.env.JWT_KEY, (err, decoded) => {
       if (decoded != null) {
         req.user = decoded;
         next();
